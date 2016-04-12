@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3c3c3c</color>
+    <color name="colorPrimaryDark">#505050</color>
+    <color name="colorAccent">#4CAF50</color>
+    <color name="fragmentBackground">#969696</color>
+    <color name="spinnerBackground">#818080</color>
+    <color name="textColorWhite">#FFFFFF</color>
+
+</resources>
+
+<!--<color name="colorPrimary">#2E7D32</color>-->
+<!--<color name="colorPrimaryDark">#4CAF50</color>-->
+<!--<color name="colorAccent">#ff0000</color>-->
+
+<!--<color name="fragWeatherBack">#3ea643</color>-->

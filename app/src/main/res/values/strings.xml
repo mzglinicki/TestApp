@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">Mój test</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="nav_main_page">Strona główna</string>
+    <string name="nav_weather">Pogoda</string>
+    <string name="nav_gallery">Galeria</string>
+    <string name="nav_first_nonclicable">Kontakty</string>
+    <string name="second_nonclicable">Aparat</string>
+    <string name="third_nonclicable">Ustawienia</string>
+    <string name="nonclicable">Nieklikalne</string>
+    <string name="nav_header_title">Mój test</string>
+    <string name="toast_non_active_choice">Wybrana opcja jest nie aktywna</string>
+    <string name="text_view_author">Autor: Marcin Zglinicki</string>
+    <string name="text_title">Mój test</string>
+    <string name="text_all_in_one_place">Wszytko co najważniejsze w jendym miejscu</string>
+    <string name="text_utility">Aplikacja pozwala na sprawdzenie pogody\nw Łodzi oraz przeglądanie galeri zdjęć.</string>
+    <string name="text_nice_using">Miłego korzystania</string>
+    <string name="text_version_info">Wersja 1.0 posiada\npodstawode założenia\nfunkcjonalności aplikacji, niestety nie wszystkie. Część\nfunkcji jest niaktywnych</string>
+    <string name="non_active">Nie aktywne </string>
+    <string name="cloud_hint">clouds </string>
+    <string name="cloud_text">Zachmurzenie: </string>
+    <string name="humidity_hint">humidity </string>
+    <string name="humidity_text">Wilgotność: </string>
+    <string name="sur_rise_hint">sun_rise </string>
+    <string name="sur_rise_text">Słońce wschodzi o </string>
+    <string name="date_hint">date</string>
+    <string name="lodz">Łódź</string>
+
+</resources>
