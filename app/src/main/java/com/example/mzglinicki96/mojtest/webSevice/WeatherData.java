@@ -9,37 +9,37 @@ import java.util.List;
 
 public class WeatherData {
 
-    @SerializedName("coord")
+    @SerializedName(WebConstants.COORD)
     @Expose
     public Coord coord;
-    @SerializedName("sys")
+    @SerializedName(WebConstants.SYSTEM)
     @Expose
     public Sys sys;
-    @SerializedName("weather")
+    @SerializedName(WebConstants.WEATHER)
     @Expose
     public List<Weather> weather = new ArrayList<Weather>();
-    @SerializedName("main")
+    @SerializedName(WebConstants.MAIN)
     @Expose
     public Main main;
-    @SerializedName("wind")
+    @SerializedName(WebConstants.WIND)
     @Expose
     public Wind wind;
-    @SerializedName("rain")
+    @SerializedName(WebConstants.RAIN)
     @Expose
     public Rain rain;
-    @SerializedName("clouds")
+    @SerializedName(WebConstants.CLOUDS)
     @Expose
     public Clouds clouds;
-    @SerializedName("dt")
+    @SerializedName(WebConstants.DT)
     @Expose
     public int dt;
-    @SerializedName("id")
+    @SerializedName(WebConstants.ID)
     @Expose
     public int id;
-    @SerializedName("name")
+    @SerializedName(WebConstants.NAME)
     @Expose
     public String name;
-    @SerializedName("cod")
+    @SerializedName(WebConstants.COD)
     @Expose
     public int cod;
 

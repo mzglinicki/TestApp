@@ -3,8 +3,7 @@
     android:id="@+id/fragment_splash"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/fragmentBackground"
-    android:orientation="vertical">
+    android:background="@color/fragmentBackground">
 
     <RelativeLayout
         android:id="@+id/logo_layout"

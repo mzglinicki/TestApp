@@ -6,7 +6,7 @@ import com.google.gson.annotations.SerializedName;
 
 public class Clouds {
 
-    @SerializedName("all")
+    @SerializedName(WebConstants.ALL)
     @Expose
     public int all;
 

@@ -12,23 +12,22 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.example.mzglinicki96.mojtest.R;
-import com.example.mzglinicki96.mojtest.database.DatabaseHelper;
+import com.example.mzglinicki96.mojtest.fragments.CityFragment;
 import com.example.mzglinicki96.mojtest.fragments.GalleryFragment;
 import com.example.mzglinicki96.mojtest.fragments.ParentFragment;
 import com.example.mzglinicki96.mojtest.fragments.SplashFragment;
-import com.example.mzglinicki96.mojtest.fragments.WeatherFragment;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    private DatabaseHelper databaseHelper;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        databaseHelper = new DatabaseHelper(this);
+
 
         createDrawerToggle();
 
@@ -55,6 +54,7 @@ public class MainActivity extends AppCompatActivity
     @Override
     public void onBackPressed() {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
@@ -115,7 +115,7 @@ public class MainActivity extends AppCompatActivity
                 transaction.replace(R.id.place_holder, fragment);
                 break;
             case R.id.nav_weather:
-                fragment = new WeatherFragment();
+                fragment = new CityFragment();
                 transaction.replace(R.id.place_holder, fragment);
                 break;
             case R.id.nav_gallery:

@@ -6,19 +6,19 @@ import com.google.gson.annotations.SerializedName;
 
 public class Main {
 
-    @SerializedName("temp")
+    @SerializedName(WebConstants.TEMP)
     @Expose
     public double temp;
-    @SerializedName("humidity")
+    @SerializedName(WebConstants.HUMIDITY)
     @Expose
     public int humidity;
-    @SerializedName("pressure")
+    @SerializedName(WebConstants.PRESSURE)
     @Expose
     public int pressure;
-    @SerializedName("temp_min")
+    @SerializedName(WebConstants.TEMP_MIN)
     @Expose
     public double tempMin;
-    @SerializedName("temp_max")
+    @SerializedName(WebConstants.TEMP_MAX)
     @Expose
     public double tempMax;
 

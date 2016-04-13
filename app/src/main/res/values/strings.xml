@@ -13,21 +13,60 @@
     <string name="third_nonclicable">Ustawienia</string>
     <string name="nonclicable">Nieklikalne</string>
     <string name="nav_header_title">Mój test</string>
-    <string name="toast_non_active_choice">Wybrana opcja jest nie aktywna</string>
+    <string name="toast_non_active_choice">Wybrana opcja jest nieaktywna</string>
     <string name="text_view_author">Autor: Marcin Zglinicki</string>
     <string name="text_title">Mój test</string>
     <string name="text_all_in_one_place">Wszytko co najważniejsze w jendym miejscu</string>
-    <string name="text_utility">Aplikacja pozwala na sprawdzenie pogody\nw Łodzi oraz przeglądanie galeri zdjęć.</string>
+    <string name="text_utility">Aplikacja pozwala na sprawdzenie pogody\nw stolicach Europy oraz przeglądanie galeri zdjęć.</string>
     <string name="text_nice_using">Miłego korzystania</string>
-    <string name="text_version_info">Wersja 1.0 posiada\npodstawode założenia\nfunkcjonalności aplikacji, niestety nie wszystkie. Część\nfunkcji jest niaktywnych</string>
-    <string name="non_active">Nie aktywne </string>
+    <string name="text_version_info">Wersja 2.0 posiada\npodstawode założenia\nfunkcjonalności aplikacji. Część funkcji, zgodnie z wytycznymi, jest niaktywnych</string>
+    <string name="non_active">Nieaktywne </string>
     <string name="cloud_hint">clouds </string>
     <string name="cloud_text">Zachmurzenie: </string>
     <string name="humidity_hint">humidity </string>
     <string name="humidity_text">Wilgotność: </string>
     <string name="sur_rise_hint">sun_rise </string>
-    <string name="sur_rise_text">Słońce wschodzi o </string>
+    <string name="sur_rise_text">Wschód słońca: </string>
     <string name="date_hint">date</string>
-    <string name="lodz">Łódź</string>
+    <string name="city">city</string>
+    <string name="text_temp_hint">temp</string>
+    <string name="available_cities">Wybierz miasto</string>
+    <string name="wind_text">Wiatr:</string>
+    <string name="wind_value">wind value</string>
+    <string name="wind_deg">deg</string>
+    <string name="weather_condition_text">Warunki pogodowe:</string>
+    <string name="condition_hint">condition</string>
+    <string name="pressure">Ciśnienie:</string>
+    <string name="pressure_hint">pressure</string>
 
+    <string-array name="cities">
+        <item>Amsterdam</item>
+        <item>Andora</item>
+        <item>Ankara</item>
+        <item>Ateny</item>
+        <item>Belgrad</item>
+        <item>Berlin</item>
+        <item>Berno</item>
+        <item>Bratysława</item>
+        <item>Bruksela</item>
+        <item>Budapeszt</item>
+        <item>Bukareszt</item>
+        <item>Dublin</item>
+        <item>Helsinki</item>
+        <item>Kijów</item>
+        <item>Lizbona</item>
+        <item>Londyn</item>
+        <item>Lublana</item>
+        <item>Luksemburg</item>
+        <item>Madryt</item>
+        <item>Monako</item>
+        <item>Moskwa</item>
+        <item>Oslo</item>
+        <item>Ryga</item>
+        <item>Tirana</item>
+        <item>Warszawa</item>
+        <item>Wiedeń</item>
+        <item>Wilno</item>
+        <item>Zagrzeb</item>
+    </string-array>
 </resources>

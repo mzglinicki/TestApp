@@ -10,14 +10,17 @@ import android.view.ViewGroup;
 /**
  * Created by mzglinicki.96 on 11.04.2016.
  */
-public class ParentFragment extends Fragment {
+public abstract class ParentFragment extends Fragment {
 
     protected int layoutId;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(layoutId, container, false);
-
+        View view = inflater.inflate(layoutId, container, false);
+        init(view);
+        return view;
     }
+
+    protected abstract void init(View view);
 }

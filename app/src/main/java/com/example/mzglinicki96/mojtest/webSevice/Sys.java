@@ -6,13 +6,13 @@ import com.google.gson.annotations.SerializedName;
 
 public class Sys {
 
-    @SerializedName("country")
+    @SerializedName(WebConstants.COUNTRY)
     @Expose
     public String country;
-    @SerializedName("sunrise")
+    @SerializedName(WebConstants.SUNRISE)
     @Expose
     public int sunrise;
-    @SerializedName("sunset")
+    @SerializedName(WebConstants.SUNSET)
     @Expose
     public int sunset;
 

@@ -6,6 +6,7 @@
     <color name="fragmentBackground">#969696</color>
     <color name="spinnerBackground">#818080</color>
     <color name="textColorWhite">#FFFFFF</color>
+    <color name="colorWeatherBackground">#2E7D32</color>
 
 </resources>
 

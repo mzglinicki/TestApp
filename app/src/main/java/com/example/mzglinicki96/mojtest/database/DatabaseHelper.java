@@ -14,20 +14,18 @@ import java.util.List;
  */
 public class DatabaseHelper extends SQLiteOpenHelper {
 
-    public static final String DATABASE_NAME = "Draws.db";
+    public static final String DATABASE_NAME = "image.db";
     public static final int DATABASE_VERSION = 1;
 
     public static final String TABLE_NAME = "image_table";
 
     public static final String COLUMN_ID = "ID";
-    public static final String COLUMN_NAME = "NAME";
     public static final String COLUMN_IMAGE = "IMAGE";
 
     private static final String DATABASE_CREATE = "create table "
             + TABLE_NAME
             + "("
             + COLUMN_ID + " integer primary key autoincrement, "
-            + COLUMN_NAME + " text, "
             + COLUMN_IMAGE + " text "
             + ")";
 
@@ -46,12 +44,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public boolean insertData(String name, String image) {
+    public boolean insertData(String image) {
 
         SQLiteDatabase database = getWritableDatabase();
 
         ContentValues contentValues = new ContentValues();
-        contentValues.put(COLUMN_NAME, name);
         contentValues.put(COLUMN_IMAGE, image);
 
         database.insert(TABLE_NAME, null, contentValues);
@@ -72,13 +69,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         while (result.moveToNext()) {
             int id = result.getInt(result.getColumnIndexOrThrow(COLUMN_ID));
-            String name = result.getString(result.getColumnIndexOrThrow(COLUMN_NAME));
             String image = result.getString(result.getColumnIndexOrThrow(COLUMN_IMAGE));
 
             ImageModel imageModel = new ImageModel();
 
             imageModel.setId(id);
-            imageModel.setName(name);
             imageModel.setImage(image);
             imageModelList.add(imageModel);
         }

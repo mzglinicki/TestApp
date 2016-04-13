@@ -6,16 +6,16 @@ import com.google.gson.annotations.SerializedName;
 
 public class Weather {
 
-    @SerializedName("id")
+    @SerializedName(WebConstants.ID)
     @Expose
     public int id;
-    @SerializedName("main")
+    @SerializedName(WebConstants.MAIN)
     @Expose
     public String main;
-    @SerializedName("description")
+    @SerializedName(WebConstants.DESCRIPTION)
     @Expose
     public String description;
-    @SerializedName("icon")
+    @SerializedName(WebConstants.ICON)
     @Expose
     public String icon;
 
