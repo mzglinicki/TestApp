@@ -6,7 +6,7 @@ import com.google.gson.annotations.SerializedName;
 
 public class Coord {
 
-    @SerializedName(WebConstants.LOT)
+    @SerializedName(WebConstants.LON)
     @Expose
     public float lon;
     @SerializedName(WebConstants.LAT)

@@ -2,6 +2,7 @@ package com.example.mzglinicki96.mojtest.activities;
 
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -14,37 +15,44 @@ import android.widget.Toast;
 import com.example.mzglinicki96.mojtest.R;
 import com.example.mzglinicki96.mojtest.fragments.CityFragment;
 import com.example.mzglinicki96.mojtest.fragments.GalleryFragment;
-import com.example.mzglinicki96.mojtest.fragments.ParentFragment;
 import com.example.mzglinicki96.mojtest.fragments.SplashFragment;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-
+    public static final String FRAGMENT_KEY = "fragment";
+    private Fragment fragment;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-
-
         createDrawerToggle();
 
-        createFragment(R.id.nav_splash_screen);
+        if (savedInstanceState != null) {
+            fragment = getSupportFragmentManager().getFragment(savedInstanceState, FRAGMENT_KEY);
+        } else {
+            createFragment(R.id.nav_splash_screen);
+        }
 
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        final NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         assert navigationView != null;
         navigationView.setNavigationItemSelectedListener(this);
     }
 
-    public void createDrawerToggle(){
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        getSupportFragmentManager().putFragment(outState, FRAGMENT_KEY, fragment);
+    }
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+    public void createDrawerToggle() {
+
+        final Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+        final DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        final ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         assert drawer != null;
         drawer.addDrawerListener(toggle);
@@ -53,22 +61,26 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     public void onBackPressed() {
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        final DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
 
+        assert drawer != null;
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
-        } else {
-            super.onBackPressed();
+            return;
         }
+        if (getSupportFragmentManager().getBackStackEntryCount() > 0) {
+
+            getSupportFragmentManager().popBackStack();
+            return;
+        }
+        super.onBackPressed();
     }
 
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
-    public boolean onNavigationItemSelected(MenuItem item) {
+    public boolean onNavigationItemSelected(final MenuItem item) {
 
-        int id = item.getItemId();
-
-        switch (id) {
+        switch (item.getItemId()) {
             case R.id.nav_splash_screen:
                 createFragment(R.id.nav_splash_screen);
                 hideMenu();
@@ -94,7 +106,7 @@ public class MainActivity extends AppCompatActivity
     }
 
     private void hideMenu() {
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        final DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         assert drawer != null;
         drawer.closeDrawer(GravityCompat.START);
     }
@@ -103,13 +115,11 @@ public class MainActivity extends AppCompatActivity
         Toast.makeText(this, R.string.toast_non_active_choice, Toast.LENGTH_SHORT).show();
     }
 
-    private void createFragment(int id){
+    private void createFragment(final int id) {
 
-        ParentFragment fragment;
+        final FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
 
-        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-
-        switch (id){
+        switch (id) {
             case R.id.nav_splash_screen:
                 fragment = new SplashFragment();
                 transaction.replace(R.id.place_holder, fragment);
@@ -119,10 +129,10 @@ public class MainActivity extends AppCompatActivity
                 transaction.replace(R.id.place_holder, fragment);
                 break;
             case R.id.nav_gallery:
-
                 fragment = new GalleryFragment();
                 transaction.replace(R.id.place_holder, fragment);
         }
+        transaction.addToBackStack(null);
         transaction.commit();
     }
 }

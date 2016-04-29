@@ -11,7 +11,6 @@
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/activity_horizontal_margin"
         android:gravity="center"
-        android:text="@string/city"
         android:textColor="@color/textColorWhite"
         android:textSize="@dimen/text_size_30" />
 
@@ -38,20 +37,20 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
-            android:hint="@string/text_temp_hint"
             android:textColor="@color/textColorWhite"
             android:textSize="@dimen/text_size_35" />
     </RelativeLayout>
 
-    <RelativeLayout
+    <LinearLayout
         android:id="@+id/weather_details_id"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:orientation="vertical"
         android:layout_below="@+id/weather_icon_layout"
         android:layout_margin="@dimen/margin_20">
 
         <LinearLayout
-            android:id="@+id/sun_rise"
+            android:id="@+id/weather_condition"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/activity_horizontal_margin">
@@ -64,11 +63,33 @@
                 android:textSize="@dimen/text_size_18" />
 
             <TextView
-                android:id="@+id/sun_rise_value"
+                android:id="@+id/weather_condition_value"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/activity_horizontal_margin"
-                android:hint="@string/sur_rise_hint"
+                android:textColor="@color/textColorWhite"
+                android:textSize="@dimen/text_size_18" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/sunrise"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/activity_horizontal_margin">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/sur_rise_text"
+                android:textColor="@color/textColorWhite"
+                android:textSize="@dimen/text_size_18" />
+
+            <TextView
+                android:id="@+id/sunrise_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
                 android:textColor="@color/textColorWhite"
                 android:textSize="@dimen/text_size_18" />
 
@@ -78,7 +99,6 @@
             android:id="@+id/humidity"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/sun_rise"
             android:layout_marginTop="@dimen/activity_horizontal_margin">
 
             <TextView
@@ -93,7 +113,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/activity_horizontal_margin"
-                android:hint="@string/humidity_hint"
                 android:textColor="@color/textColorWhite"
                 android:textSize="@dimen/text_size_18" />
 
@@ -103,7 +122,6 @@
             android:id="@+id/clouds"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/humidity"
             android:layout_marginTop="@dimen/activity_horizontal_margin">
 
             <TextView
@@ -118,7 +136,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/activity_horizontal_margin"
-                android:hint="@string/cloud_hint"
                 android:textColor="@color/textColorWhite"
                 android:textSize="@dimen/text_size_18" />
 
@@ -128,7 +145,6 @@
             android:id="@+id/wind"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/clouds"
             android:layout_marginTop="@dimen/activity_horizontal_margin">
 
             <TextView
@@ -143,7 +159,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/activity_horizontal_margin"
-                android:hint="@string/wind_value"
                 android:textColor="@color/textColorWhite"
                 android:textSize="@dimen/text_size_18" />
 
@@ -153,7 +168,6 @@
             android:id="@+id/pressure"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/wind"
             android:layout_marginTop="@dimen/activity_horizontal_margin">
 
             <TextView
@@ -168,11 +182,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/activity_horizontal_margin"
-                android:hint="@string/pressure_hint"
                 android:textColor="@color/textColorWhite"
                 android:textSize="@dimen/text_size_18" />
 
         </LinearLayout>
 
-    </RelativeLayout>
+    </LinearLayout>
 </RelativeLayout>

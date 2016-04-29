@@ -6,7 +6,7 @@ import com.google.gson.annotations.SerializedName;
 
 public class Rain {
 
-    @SerializedName(WebConstants.TIM_FROM_RAIN)
+    @SerializedName(WebConstants.TIME)
     @Expose
     public int rainVolume;
 

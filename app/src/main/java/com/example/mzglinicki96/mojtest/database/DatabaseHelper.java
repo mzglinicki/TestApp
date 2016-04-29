@@ -29,7 +29,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             + COLUMN_IMAGE + " text "
             + ")";
 
-    public DatabaseHelper(Context context) {
+    public DatabaseHelper(final Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 
@@ -64,7 +64,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     public List<ImageModel> getImageData() {
 
-        List<ImageModel> imageModelList = new ArrayList<>();
+        final List<ImageModel> imageModelList = new ArrayList<>();
         final Cursor result = getAllData();
 
         while (result.moveToNext()) {

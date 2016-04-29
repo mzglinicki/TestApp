@@ -1,6 +1,7 @@
 package com.example.mzglinicki96.mojtest.adapters;
 
 import android.content.Context;
+import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.support.v4.view.PagerAdapter;
@@ -23,10 +24,9 @@ import java.util.List;
 public class CustomPagerAdapter extends PagerAdapter {
 
     private List<Uri> pictureList = null;
-    private Context context;
-    private LayoutInflater layoutInflater;
+    private final Context context;
 
-    public CustomPagerAdapter(Context context, List<Uri> pictureList) {
+    public CustomPagerAdapter(final Context context, final List<Uri> pictureList) {
         this.context = context;
         this.pictureList = pictureList;
     }
@@ -38,25 +38,28 @@ public class CustomPagerAdapter extends PagerAdapter {
 
     @Override
     public boolean isViewFromObject(View view, Object object) {
-        return (view == (RelativeLayout)object);
+        return (view == (RelativeLayout) object);
     }
 
     @Override
     public Object instantiateItem(ViewGroup container, int position) {
 
-        layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        View itemView = layoutInflater.inflate(R.layout.swipe_layout, container, false);
-        ImageView imageView = (ImageView) itemView.findViewById(R.id.image_to_show);
+        final LayoutInflater layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        final View itemView = layoutInflater.inflate(R.layout.swipe_layout, container, false);
+        final ImageView imageView = (ImageView) itemView.findViewById(R.id.image_to_show);
 
-        InputStream stream;
+        final InputStream stream;
         try {
             stream = context.getContentResolver().openInputStream(pictureList.get(position));
-            imageView.setImageBitmap(BitmapFactory.decodeStream(stream));
+
+            BitmapFactory.Options options = new BitmapFactory.Options();
+            options.inSampleSize = 2;
+
+            imageView.setImageBitmap(BitmapFactory.decodeStream(stream, null, options));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
         container.addView(itemView);
-
         return itemView;
     }
 
@@ -65,7 +68,7 @@ public class CustomPagerAdapter extends PagerAdapter {
         ((ViewPager) container).removeView((View) object);
     }
 
-    public void addImage(Uri path){
+    public void addImage(Uri path) {
         pictureList.add(path);
         notifyDataSetChanged();
     }

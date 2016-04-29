@@ -6,14 +6,14 @@ package com.example.mzglinicki96.mojtest.webSevice;
 public class WebConstants {
 
     public static final String ALL = "all";
-    public static final String LOT = "lon";
+    public static final String LON = "lon";
     public static final String LAT = "lat";
     public static final String TEMP = "temp";
     public static final String HUMIDITY = "humidity";
     public static final String PRESSURE = "pressure";
     public static final String TEMP_MIN = "temp_min";
     public static final String TEMP_MAX = "temp_max";
-    public static final String TIM_FROM_RAIN = "3h";
+    public static final String TIME = "3h";
     public static final String COUNTRY = "country";
     public static final String SUNRISE = "sunrise";
     public static final String SUNSET = "sunset";

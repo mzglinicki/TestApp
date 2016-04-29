@@ -3,8 +3,6 @@
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-
-    <string name="action_settings">Settings</string>
     <string name="nav_main_page">Strona główna</string>
     <string name="nav_weather">Pogoda</string>
     <string name="nav_gallery">Galeria</string>
@@ -17,27 +15,16 @@
     <string name="text_view_author">Autor: Marcin Zglinicki</string>
     <string name="text_title">Mój test</string>
     <string name="text_all_in_one_place">Wszytko co najważniejsze w jendym miejscu</string>
-    <string name="text_utility">Aplikacja pozwala na sprawdzenie pogody\nw stolicach Europy oraz przeglądanie galeri zdjęć.</string>
+    <string name="text_utility">Aplikacja pozwala na sprawdzenie pogody\nw stolicach Europy oraz przeglądanie galerii zdjęć.</string>
     <string name="text_nice_using">Miłego korzystania</string>
-    <string name="text_version_info">Wersja 2.0 posiada\npodstawode założenia\nfunkcjonalności aplikacji. Część funkcji, zgodnie z wytycznymi, jest niaktywnych</string>
-    <string name="non_active">Nieaktywne </string>
-    <string name="cloud_hint">clouds </string>
+    <string name="text_version_info">Wersja 2.0 posiada podstawode założenia funkcjonalności aplikacji. Część funkcji, zgodnie z wytycznymi, jest niaktywnych</string>
     <string name="cloud_text">Zachmurzenie: </string>
-    <string name="humidity_hint">humidity </string>
     <string name="humidity_text">Wilgotność: </string>
-    <string name="sur_rise_hint">sun_rise </string>
     <string name="sur_rise_text">Wschód słońca: </string>
-    <string name="date_hint">date</string>
-    <string name="city">city</string>
-    <string name="text_temp_hint">temp</string>
     <string name="available_cities">Wybierz miasto</string>
     <string name="wind_text">Wiatr:</string>
-    <string name="wind_value">wind value</string>
-    <string name="wind_deg">deg</string>
-    <string name="weather_condition_text">Warunki pogodowe:</string>
-    <string name="condition_hint">condition</string>
     <string name="pressure">Ciśnienie:</string>
-    <string name="pressure_hint">pressure</string>
+    <string name="degrees_value_format" formatted = "false">%.2f°C</string>
 
     <string-array name="cities">
         <item>Amsterdam</item>

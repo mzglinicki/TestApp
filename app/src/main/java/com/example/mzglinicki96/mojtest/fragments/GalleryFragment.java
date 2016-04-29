@@ -3,6 +3,7 @@ package com.example.mzglinicki96.mojtest.fragments;
 import android.app.Activity;
 import android.content.ContentResolver;
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.provider.MediaStore;
 import android.support.design.widget.FloatingActionButton;
@@ -39,7 +40,7 @@ public class GalleryFragment extends ParentFragment {
         databaseHelper = new DatabaseHelper(getContext());
 
         viewPager = (ViewPager) view.findViewById(R.id.view_pager);
-        adapter = new CustomPagerAdapter(getContext(), getDefaultImage());
+        adapter = new CustomPagerAdapter(getContext(), getImages());
         assert viewPager != null;
         viewPager.setAdapter(adapter);
 
@@ -47,7 +48,7 @@ public class GalleryFragment extends ParentFragment {
         onFloatingActionPressed(fab);
     }
 
-    private List<Uri> getDefaultImage() {
+    private List<Uri> getImages() {
 
         pictureList = new ArrayList<>();
 
@@ -59,22 +60,25 @@ public class GalleryFragment extends ParentFragment {
                 pictureList.add(uri);
             }
         } else {
-            Uri uriAndroid = Uri.parse(ContentResolver.SCHEME_ANDROID_RESOURCE +
-                    "://" + getResources().getResourcePackageName(R.drawable.android)
-                    + '/' + getResources().getResourceTypeName(R.drawable.android) + '/' + getResources()
-                    .getResourceEntryName(R.drawable.android));
-
-            Uri uriTrain = Uri.parse(ContentResolver.SCHEME_ANDROID_RESOURCE +
-                    "://" + getResources().getResourcePackageName(R.drawable.train)
-                    + '/' + getResources().getResourceTypeName(R.drawable.train) + '/' + getResources()
-                    .getResourceEntryName(R.drawable.train));
-
-            pictureList.add(uriAndroid);
-            pictureList.add(uriTrain);
-            databaseHelper.insertData(uriAndroid.toString());
-            databaseHelper.insertData(uriTrain.toString());
+            getDefaultImage(R.drawable.android);
+            getDefaultImage(R.drawable.train);
         }
         return pictureList;
+    }
+
+    private void getDefaultImage(final int resId){
+
+        Uri uri = Uri.parse(ContentResolver.SCHEME_ANDROID_RESOURCE +
+                "://" + getResources().getResourcePackageName(resId)
+                + '/' + getResources().getResourceTypeName(resId) + '/' + getResources()
+                .getResourceEntryName(resId));
+        addPicture(uri);
+    }
+
+    private void addPicture(Uri uri){
+
+        pictureList.add(uri);
+        databaseHelper.insertData(uri.toString());
     }
 
     public void onFloatingActionPressed(FloatingActionButton fab) {
